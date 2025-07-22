@@ -12,9 +12,9 @@ import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Icon
-import androidx.compose.material3.icons.Icons
-import androidx.compose.material3.icons.filled.List
-import androidx.compose.material3.icons.filled.Restaurant
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -27,7 +27,7 @@ import com.example.lemonpeel.ui.theme.LemonPeelTheme
 
 sealed class Screen(val title: String, val icon: ImageVector) {
     object Inventory : Screen("Inventory", Icons.Filled.List)
-    object Recipes : Screen("Recipes", Icons.Filled.Restaurant)
+    object Recipes : Screen("Recipes", Icons.Filled.Star)
 }
 
 @Composable
@@ -82,8 +82,8 @@ class MainActivity : ComponentActivity() {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun InventoryScreenPreview() {
     LemonPeelTheme {
-        Greeting("Android")
+        InventoryScreen()
     }
 }
